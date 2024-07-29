@@ -1,6 +1,5 @@
 package com.pdsc.controller;
 
-import com.pdsc.model.ManagerDao;
 import com.pdsc.model.Usuario;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -15,7 +14,7 @@ import javax.faces.context.FacesContext;
  */
 @ManagedBean
 @SessionScoped
-public class UsuarioController {
+public class UsuarioController extends Controller {
 
     private Usuario usuarioCadastro;
     private Usuario selection;
@@ -32,14 +31,14 @@ public class UsuarioController {
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "A senha e a confirmação não são iguais!"));
             return;
         }
-        ManagerDao.getCurrentInstance().insert(this.usuarioCadastro);
+        insert(this.usuarioCadastro);
         this.usuarioCadastro = new Usuario();
         FacesContext.getCurrentInstance().addMessage(null,
                 new FacesMessage("Usuario cadastrado com sucesso!"));
     }
 
     public List<Usuario> readAll() {
-        return ManagerDao.getCurrentInstance().read("select p from Usuario p", Usuario.class);
+        return read("select p from Usuario p", Usuario.class);
     }
 
     public Usuario getUsuarioCadastro() {
@@ -57,5 +56,4 @@ public class UsuarioController {
     public void setSelection(Usuario selection) {
         this.selection = selection;
     }
-
 }

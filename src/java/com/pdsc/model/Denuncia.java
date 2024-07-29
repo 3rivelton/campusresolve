@@ -21,6 +21,9 @@ public class Denuncia {
   @Id
   @GeneratedValue(strategy = GenerationType.SEQUENCE)
   private int id;
+  private String setorDenuncia;
+  private String tipoDenuncia;
+  private String assundoDenuncia;
   @Temporal(TemporalType.DATE)
   private Date dataDenuncia;
   private String localDenuncia;
@@ -76,6 +79,30 @@ public class Denuncia {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public String getSetorDenuncia() {
+        return setorDenuncia;
+    }
+
+    public void setSetorDenuncia(String setorDenuncia) {
+        this.setorDenuncia = setorDenuncia;
+    }
+
+    public String getTipoDenuncia() {
+        return tipoDenuncia;
+    }
+
+    public void setTipoDenuncia(String tipoDenuncia) {
+        this.tipoDenuncia = tipoDenuncia;
+    }
+
+    public String getAssundoDenuncia() {
+        return assundoDenuncia;
+    }
+
+    public void setAssundoDenuncia(String assundoDenuncia) {
+        this.assundoDenuncia = assundoDenuncia;
     }
     
 }
