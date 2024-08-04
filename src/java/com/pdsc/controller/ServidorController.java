@@ -9,8 +9,7 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 /**
- *
- * @author PDSC
+ * Controlador para gerenciamento de Servidores.
  */
 @ManagedBean
 @SessionScoped
@@ -25,22 +24,47 @@ public class ServidorController extends Controller {
         this.selection = new Servidor();
     }
 
+    /**
+     * Insere um novo servidor no banco de dados após validação.
+     * 
+     * @param confirma Senha para confirmação.
+     */
     public void inserir(String confirma) {
-        if (!this.servidorCadastro.getSenha().equals(confirma)) {
-            FacesContext.getCurrentInstance().addMessage("formRegistroServidor:senha",
-                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "A senha e a confirmação não são iguais!"));
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        if (!servidorCadastro.getSenha().equals(confirma)) {
+            context.addMessage("formRegistroServidor:senha",
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "A senha e a confirmação não são iguais!"));
             return;
         }
-        insert(this.servidorCadastro);
-        this.servidorCadastro = new Servidor();
-        FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage("Servidor cadastrado com sucesso!"));
+
+        try {
+            insert(servidorCadastro);
+            servidorCadastro = new Servidor(); // Limpa o formulário
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso!", "Servidor cadastrado com sucesso!"));
+        } catch (Exception e) {
+            context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Não foi possível cadastrar o servidor."));
+            e.printStackTrace(); // Log de erro para diagnóstico
+        }
     }
 
+    /**
+     * Recupera todos os servidores do banco de dados.
+     * 
+     * @return Lista de servidores.
+     */
     public List<Servidor> readAll() {
-        return read("select p from Servidor p", Servidor.class);
+        try {
+            return read("select p from Servidor p", Servidor.class);
+        } catch (Exception e) {
+            FacesContext.getCurrentInstance().addMessage(null,
+                new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro!", "Não foi possível recuperar a lista de servidores."));
+            e.printStackTrace(); // Log de erro para diagnóstico
+            return null;
+        }
     }
 
+    // Getters e Setters
     public Servidor getServidorCadastro() {
         return servidorCadastro;
     }
@@ -56,5 +80,4 @@ public class ServidorController extends Controller {
     public void setSelection(Servidor selection) {
         this.selection = selection;
     }
-
 }
