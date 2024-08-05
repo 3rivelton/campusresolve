@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="Davidson" name="com.pdsc.test.LoginUITest" skipped="0" tests="1" time="9.834" timestamp="2024-08-04T20:48:04">
+<testsuite errors="0" failures="0" hostname="Davidson" name="com.pdsc.test.LoginUITest" skipped="0" tests="1" time="9.429" timestamp="2024-08-05T16:01:29">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="javac.test.classpath" value="C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\enterprise\modules\ext\jsf-2_2\javax.faces.jar:C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\enterprise\modules\ext\primefaces\primefaces-5.0.jar:C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\java\modules\ext\eclipselink\eclipselink.jar;C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\java\modules\ext\eclipselink\javax.persistence_2.1.0.v201304241213.jar;C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\java\modules\ext\eclipselink\org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar:conectores/BootsFaces-OSP-default-1.5.0.jar:C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\ide\modules\ext\mysql-connector-java-5.1.23-bin.jar:conectores\mysql-connector-j-8.0.33.jar:C:\Users\david\Downloads\hibernate-validator-4.3.0.Final.jar:C:\Users\david\Downloads\jboss-logging-3.1.0.GA.jar:C:\Users\david\Downloads\validation-api-1.1.0.Final.jar:C:\Users\david\Downloads\junit-4.12.jar:C:\Users\david\Downloads\junit-jupiter-api-5.11.0-RC1.jar:C:\Users\david\Downloads\selenium-chrome-driver-2.26.0.jar:C:\Users\david\Downloads\selenium-java-3.141.59.jar:C:\Users\david\Downloads\selenium-server-standalone-3.141.59.jar:C:\Users\david\Downloads\hamcrest-all-1.3.jar:C:\Users\david\Downloads\json-20210307.jar:build/web/WEB-INF/classes" />
@@ -50,7 +50,7 @@
     <property name="libs.jsf12.javadoc" value="C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\enterprise\docs\javaee-doc-api.jar" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.pdsc.test.LoginUITest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\david\Documents\campusresolve\build\test\results\TEST-com.pdsc.test.LoginUITest.xml crashfile=C:\Users\david\Documents\campusresolve\build\junitvmwatcher4880646194361241869.properties propsfile=C:\Users\david\Documents\campusresolve\build\junit1813394194497845330.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.pdsc.test.LoginUITest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,C:\Users\david\Documents\campusresolve\build\test\results\TEST-com.pdsc.test.LoginUITest.xml crashfile=C:\Users\david\Documents\campusresolve\build\junitvmwatcher212920352931324161.properties propsfile=C:\Users\david\Documents\campusresolve\build\junit2601452035594413042.properties" />
     <property name="build.classes.dir" value="build/web/WEB-INF/classes" />
     <property name="ap.supported.internal" value="true" />
     <property name="libs.javaee-endorsed-api-7.0.javadoc" value="C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\enterprise\docs\javaee-doc-api.jar" />
@@ -375,15 +375,15 @@
     <property name="war.ear.name" value="CampusResolve.war" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="C:\Users\david\Documents\NetBeans_JavaSE_Portable\App\netbeans\enterprise\docs\javaee-doc-api.jar" />
   </properties>
-  <testcase classname="com.pdsc.test.LoginUITest" name="testRegistrarUsuarioDadosValidos" time="9.761" />
+  <testcase classname="com.pdsc.test.LoginUITest" name="testRegistrarUsuarioDadosValidos" time="9.365" />
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[ago 04, 2024 5:48:05 PM org.openqa.selenium.remote.DesiredCapabilities chrome
+  <system-err><![CDATA[ago 05, 2024 1:01:30 PM org.openqa.selenium.remote.DesiredCapabilities chrome
 INFORMAÇÕES: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
-Starting ChromeDriver 127.0.6533.88 (a2d0cb026721e4644e489b8ebb07038ca4e4351c-refs/branch-heads/6533@{#1846}) on port 23958
+Starting ChromeDriver 127.0.6533.88 (a2d0cb026721e4644e489b8ebb07038ca4e4351c-refs/branch-heads/6533@{#1846}) on port 3372
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-ago 04, 2024 5:48:07 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+ago 05, 2024 1:01:31 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFORMAÇÕES: Detected dialect: W3C
 ]]></system-err>
 </testsuite>

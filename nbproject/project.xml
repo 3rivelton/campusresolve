@@ -43,6 +43,7 @@
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
+<<<<<<< HEAD
                     <file>${file.reference.junit-4.12.jar}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
@@ -68,6 +69,13 @@
                 </library>
                 <library dirs="200">
                     <file>${file.reference.json-20210307.jar}</file>
+=======
+                    <file>${file.reference.taglibs-standard-impl-1.2.5.jar}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${file.reference.taglibs-standard-spec-1.2.5.jar}</file>
+>>>>>>> 334134d9d8bd5e9c49f0987a224e7b58a303fc7a
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
