@@ -3,7 +3,6 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
             <file>file:/C:/Users/david/Documents/campusresolve/src/java/com/pdsc/model/Servidor.java</file>
             <file>file:/C:/Users/david/Documents/campusresolve/src/java/com/pdsc/controller/ServidorController.java</file>
             <file>file:/C:/Users/david/Documents/campusresolve/web/login.xhtml</file>
@@ -13,12 +12,9 @@
             <file>file:/C:/Users/david/Documents/campusresolve/src/java/com/pdsc/controller/UsuarioController.java</file>
             <file>file:/C:/Users/david/Documents/campusresolve/src/java/com/pdsc/model/Usuario.java</file>
             <file>file:/C:/Users/david/Documents/campusresolve/src/java/com/pdsc/controller/LoginController.java</file>
+            <file>file:/C:/Users/david/Documents/campusresolve/nbproject/build-impl.xml</file>
             <file>file:/C:/Users/david/Documents/campusresolve/test/com/pdsc/test/LoginUITest.java</file>
-=======
-            <file>file:/C:/Users/estudo/Documents/NetBeansProjects/CampusResolve/src/java/com/pdsc/controller/ServidorController.java</file>
-            <file>file:/C:/Users/estudo/Documents/NetBeansProjects/CampusResolve/src/java/com/pdsc/controller/DenunciaController.java</file>
-            <file>file:/C:/Users/estudo/Documents/NetBeansProjects/CampusResolve/src/conf/persistence.xml</file>
->>>>>>> 334134d9d8bd5e9c49f0987a224e7b58a303fc7a
+            <file>file:/C:/Users/david/Documents/campusresolve/nbproject/build-impl.xml~</file>
         </group>
     </open-files>
 </project-private>

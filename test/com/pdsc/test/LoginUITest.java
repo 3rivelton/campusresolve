@@ -54,5 +54,35 @@ public class LoginUITest {
         WebElement spanElement = driver.findElement(By.tagName("span"));
         String pageContent = spanElement.getText();
         assertTrue(pageContent.contains("Primefaces welcome page"));
+
+        // Chamar o método usuarioBasico para testar a navegação
+        usuarioBasico();
+    }
+
+    public void usuarioBasico() throws InterruptedException {
+        
+        // Navegar para a página de login
+        driver.get("http://localhost:8080/CampusResolve/faces/login.xhtml");
+        // Clicar no botão para entrar na tela de Usuário Básico
+        driver.findElement(By.id("j_idt17_tab")).click();
+        Thread.sleep(3000); // Espera por 3 segundos para carregar a página
+        
+         // Adicionar delay para visualização
+        Thread.sleep(2000); // Espera por 2 segundos
+
+        // Preencher os campos de login
+        driver.findElement(By.id("input_j_idt17:j_idt18:j_idt21")).sendKeys("1234");
+        Thread.sleep(1000); // Espera por 1 segundo
+
+        driver.findElement(By.id("input_j_idt17:j_idt18:j_idt23")).sendKeys("Testeifpe1*");
+        Thread.sleep(1000); // Espera por 1 segundo
+
+        // Clicar no botão de login
+        driver.findElement(By.id("j_idt17:j_idt18:j_idt24")).click();
+        Thread.sleep(2000); // Espera por 2 segundos
+
+        // Verificar se o login foi bem-sucedido identificando o formulário "formMenu"
+        WebElement formElement = driver.findElement(By.id("formMenu"));
+        assertTrue(formElement.isDisplayed()); // Verifica se o formulário está sendo exibido
     }
 }
