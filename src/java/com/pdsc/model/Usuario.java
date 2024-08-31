@@ -2,6 +2,7 @@ package com.pdsc.model;
 
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -27,6 +28,7 @@ public class Usuario {
   
   @NotBlank(message = "Nome não pode estar em branco.")
   @Size(min = 2, max = 50, message = "O nome deve ter entre 2 e 50 caracteres.")
+  @Column(length = 50)
   private String nome;
   
   @NotBlank(message = "Senha não pode estar em branco.")

@@ -48,14 +48,14 @@ public class UsuarioController extends Controller {
         }
 
         // Validar a entidade
-        Set<ConstraintViolation<Usuario>> violations = validator.validate(usuarioCadastro);
-        if (!violations.isEmpty()) {
-            for (ConstraintViolation<Usuario> violation : violations) {
-                FacesContext.getCurrentInstance().addMessage(null,
-                        new FacesMessage(FacesMessage.SEVERITY_ERROR, violation.getMessage(), null));
-            }
-            return;
-        }
+        //Set<ConstraintViolation<Usuario>> violations = validator.validate(usuarioCadastro);
+        //if (!violations.isEmpty()) {
+        //    for (ConstraintViolation<Usuario> violation : violations) {
+        //        FacesContext.getCurrentInstance().addMessage(null,
+        //                new FacesMessage(FacesMessage.SEVERITY_ERROR, violation.getMessage(), null));
+        //    }
+        //    return;
+        //}
 
         insert(usuarioCadastro);
         usuarioCadastro = new Usuario();

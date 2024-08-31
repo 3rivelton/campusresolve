@@ -24,16 +24,17 @@
                 <b:panel>
                     <b:row><b:label value="Nome: #{loginController.usuarioLogado.nome}" style="margin-right: 3px" /></b:row>
                 </b:panel>
-                <b:panel style="background-color: greenyellow" title="Denúncas" collapsible="false">
+                <b:panel style="background-color: greenyellow" title="Denúncias" collapsible="false">
                     <b:panelGrid columns="4">
                         <c:forEach items="#{denunciaController.listarDenuncias(loginController.usuarioLogado)}" var="denuncia">
-                            <b:panel title="Titulo" collapsible="false" 
-                                     style=" align-content: center; align-items: center; margin: 10px;">
+                            <b:panel title="#{denuncia.tipoDenuncia} || #{denuncia.assundoDenuncia}" collapsible="false" 
+                                     style="align-content: center; align-items: center; margin: 10px; max-width: 300px; word-wrap: break-word;">
                                 <b:row style="margin: 5px;">
                                     <b:label value="Descrição" severity="success" style="margin-right: 3px" />
                                     <h:outputText value="#{denuncia.descricaoDenuncia}" />                  
                                 </b:row>
                             </b:panel>
+
                         </c:forEach>
                     </b:panelGrid>
                 </b:panel>
@@ -41,9 +42,8 @@
         </b:form>
         <b:form id="formRegistrarDenuncia">
             <b:modal id="modalRegistrarDenuncia" class="mRegistrarDenuncia">
-                <b:panelGrid columns="2">
-                    <h:outputText value="Qual o Tipo de Manifestação"/>
-                    <b:selectOneMenu value="#{denunciaController.denuncia.tipoDenuncia}" colMd="2" required="true" labelColMd="2"
+                <b:panelGrid columns="1">
+                    <b:selectOneMenu style="border: 1px solid; border-color: black" value="#{denunciaController.denuncia.tipoDenuncia}" label="Qual o Tipo de Manifestação?" required="true" 
                                      select2="true">
                         <f:selectItem itemLabel="(Selecione um Tipo)" itemValue="" />
                         <f:selectItem itemLabel="Elogio" itemValue="Elogio" />
@@ -52,9 +52,7 @@
                         <f:selectItem itemLabel="Sugestão" itemValue="Sugestão" />
                         <f:selectItem itemLabel="Denuncia" itemValue="Denuncia" />
                     </b:selectOneMenu>
-                    
-                    <h:outputText value="Qual o Assunto?"/>
-                    <b:selectOneMenu value="#{denunciaController.denuncia.assundoDenuncia}" colMd="2" required="true" labelColMd="2"
+                    <b:selectOneMenu value="#{denunciaController.denuncia.assundoDenuncia}" label="Qual o Assunto?" required="true"
                                      select2="true">
                         <f:selectItem itemLabel="(Selecione um Assunto)" itemValue="" />
                         <f:selectItem itemLabel="Assedio" itemValue="Assedio" />
@@ -66,9 +64,9 @@
                         <f:selectItem itemLabel="Descriminação" itemValue="Descriminação" />
                         <f:selectItem itemLabel="Outro" itemValue="Outro" />
                     </b:selectOneMenu>
-                    
-                    <h:outputText value="Descrição"/>
-                    <b:inputText value="#{denunciaController.denuncia.descricaoDenuncia}"  />
+                    <b:inputTextarea label="Descrição" required="true" rows="4" maxlength="250" value="#{denunciaController.denuncia.descricaoDenuncia}" />                    
+                    <b:inputText placeholder="Local do fato" required="true" maxlength="50" label="Local do fato" value="#{denunciaController.denuncia.localDenuncia}"  />
+
                     <b:commandButton value="Registrar" action="#{denunciaController.inserirDenuncia()}" />
                 </b:panelGrid>
             </b:modal>
