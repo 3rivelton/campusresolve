@@ -11,6 +11,7 @@ import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 
 /**
  *
@@ -24,7 +25,7 @@ public class DenunciaController extends Controller {
     private Denuncia denuncia;
     private List<Denuncia> listaDenunciasServidor;
     private List<Denuncia> listaDenunciasUsuario;
-    private final SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
+    private final SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy HH:mm");
     
     @PostConstruct
     public void init(){
@@ -70,6 +71,10 @@ public class DenunciaController extends Controller {
         return read("select d from Denuncia d where d.usuario.id = " + usuario.getId(), Denuncia.class);
         
     }
+    
+    public String formatarData(Date data){
+        return dataFormatada.format(data);
+    }
 
     public Denuncia getDenuncia() {
         return denuncia;
@@ -94,5 +99,7 @@ public class DenunciaController extends Controller {
     public void setListaDenunciasUsuario(List<Denuncia> listaDenunciasUsuario) {
         this.listaDenunciasUsuario = listaDenunciasUsuario;
     }
+    
+    
     
 }

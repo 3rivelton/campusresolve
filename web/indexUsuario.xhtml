@@ -27,12 +27,31 @@
                 <b:panel style="background-color: greenyellow" title="Denúncias" collapsible="false">
                     <b:panelGrid columns="4">
                         <c:forEach items="#{denunciaController.listarDenuncias(loginController.usuarioLogado)}" var="denuncia">
-                            <b:panel title="#{denuncia.tipoDenuncia} || #{denuncia.assundoDenuncia}" collapsible="false" 
-                                     style="align-content: center; align-items: center; margin: 10px; max-width: 300px; word-wrap: break-word;">
+                            <b:panel collapsible="false" style="align-content: center; align-items: center; margin: 10px; max-width: 300px; word-wrap: break-word;">
+                                <f:facet name="heading">
+                                    <b:row style="margin: 3px;">
+                                        <b:label value="Tipo: " severity="primary" style="margin-right: 3px" />
+                                        <h:outputText value=" #{denuncia.tipoDenuncia} " />
+                                    </b:row>
+                                    <b:row style="margin: 3px;">
+                                        <b:label value="Assunto: " severity="info" style="margin-right: 3px" />
+                                        <h:outputText value="#{denuncia.assundoDenuncia}" />
+                                    </b:row>
+                                </f:facet>
                                 <b:row style="margin: 5px;">
                                     <b:label value="Descrição" severity="success" style="margin-right: 3px" />
                                     <h:outputText value="#{denuncia.descricaoDenuncia}" />                  
                                 </b:row>
+                                <f:facet name="footer">
+                                    <b:row style="margin: 3px;">
+                                        <b:label value="Local: " severity="warning" style="margin-right: 3px" />
+                                        <h:outputText value=" #{denuncia.localDenuncia} " />
+                                    </b:row>
+                                    <b:row style="margin: 3px;">
+                                        <b:label value="Data/Hora: " severity="danger" style="margin-right: 3px" />
+                                        <h:outputText value=" #{denunciaController.formatarData(denuncia.dataDenuncia)} " />
+                                    </b:row>
+                                </f:facet>
                             </b:panel>
 
                         </c:forEach>
@@ -66,6 +85,12 @@
                     </b:selectOneMenu>
                     <b:inputTextarea label="Descrição" required="true" rows="4" maxlength="250" value="#{denunciaController.denuncia.descricaoDenuncia}" />                    
                     <b:inputText placeholder="Local do fato" required="true" maxlength="50" label="Local do fato" value="#{denunciaController.denuncia.localDenuncia}"  />
+                    <b:dateTimePicker value="#{denunciaController.denuncia.dataDenuncia}"
+                                      label="Data/Hora"
+                                      mode="popup"
+                                      required="true"
+                                      format="DD/MM/YYYY HH:mm" 
+                                      locale="pt" />
 
                     <b:commandButton value="Registrar" action="#{denunciaController.inserirDenuncia()}" />
                 </b:panelGrid>
