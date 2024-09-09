@@ -60,6 +60,7 @@ public class DenunciaController extends Controller {
         .getExternalContext().getSession(true))
         .getAttribute("loginController")).getUsuarioLogado();
     this.denuncia.setUsuario(usuarioLogado);
+    this.denuncia.setEstadoDenuncia("N");
     insert(this.denuncia);
     this.denuncia = new Denuncia();
     return "indexUsuario";  // Redireciona para a página de sucesso
@@ -67,9 +68,11 @@ public class DenunciaController extends Controller {
 
     
     public List<Denuncia> listarDenuncias(Usuario usuario){
-        
         return read("select d from Denuncia d where d.usuario.id = " + usuario.getId(), Denuncia.class);
-        
+    }
+    
+    public List<Denuncia> listarDenunciasNovas(){
+        return read("select d from Denuncia d where d.localdenuncia = 'N'", Denuncia.class);
     }
     
     public String formatarData(Date data){

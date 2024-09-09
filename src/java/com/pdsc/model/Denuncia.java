@@ -28,6 +28,9 @@ public class Denuncia {
   private Date dataDenuncia;
   private String localDenuncia;
   private String descricaoDenuncia;
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date dataCriacao;
+  private String estadoDenuncia; /* novo N | processando P | encaminhado E | resolvido R | arquivado A */
   @ManyToOne
   private Servidor servidor;
   @ManyToOne
@@ -103,6 +106,22 @@ public class Denuncia {
 
     public void setAssundoDenuncia(String assundoDenuncia) {
         this.assundoDenuncia = assundoDenuncia;
+    }
+
+    public Date getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(Date dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public String getEstadoDenuncia() {
+        return estadoDenuncia;
+    }
+
+    public void setEstadoDenuncia(String estadoDenuncia) {
+        this.estadoDenuncia = estadoDenuncia;
     }
     
 }
