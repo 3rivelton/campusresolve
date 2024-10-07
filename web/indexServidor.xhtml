@@ -35,79 +35,89 @@
                     </f:facet>
                 </b:panel>
                 <b:panel   collapsible="false">
-                <h:panelGroup style="border-bottom: 1px solid #ccc; margin: 10px 0;">
-                    <!-- Dashboard com os círculos para cada tipo de denúncia -->
-                    <b:container fluid="true">
-                        <b:row styleClass="placeholders">
-                            <!-- Círculo Elogio -->
-                            <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
-                                <h:outputText value="3" styleClass="circle-number" style="background-color: #FFB3BA;"/>
-                                <h:outputText value="Elogio" styleClass="h4"/>
-                            </b:column>
+                    <h:panelGroup style="border-bottom: 1px solid #ccc; margin: 10px 0;">
+                        <!-- Dashboard com os círculos para cada tipo de denúncia -->
+                        <b:container fluid="true">
+                            <b:row styleClass="placeholders">
+                                <!-- Círculo Elogio -->
+                                <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
+                                    <h:outputText value="3" styleClass="circle-number" style="background-color: #BAE1FF;"/>
+                                    <h:outputText value="Elogio" styleClass="h4"/>
+                                </b:column>
 
-                            <!-- Círculo Reclamação -->
-                            <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
-                                <h:outputText value="7" styleClass="circle-number" style="background-color: #FFDFBA;"/>
-                                <h:outputText value="Reclamação" styleClass="h4" />
-                            </b:column>
+                                <!-- Círculo Sugestão -->
+                                <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
+                                    <h:outputText value="5" styleClass="circle-number" style="background-color: #BAFFC9;"/>
+                                    <h:outputText value="Sugestão" styleClass="h4" />
+                                </b:column>
 
-                            <!-- Círculo Solicitação -->
-                            <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
-                                <h:outputText value="2" styleClass="circle-number" style="background-color: #FFFFBA;" />
-                                <h:outputText value="Solicitação" styleClass="h4" />
-                            </b:column>
+                                <!-- Círculo Solicitação -->
+                                <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
+                                    <h:outputText value="2" styleClass="circle-number" style="background-color: #FFFFBA;" />
+                                    <h:outputText value="Solicitação" styleClass="h4" />
+                                </b:column>
 
-                            <!-- Círculo Sugestão -->
-                            <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
-                                <h:outputText value="5" styleClass="circle-number" style="background-color: #BAFFC9;"/>
-                                <h:outputText value="Sugestão" styleClass="h4" />
-                            </b:column>
 
-                            <!-- Círculo Denuncia -->
-                            <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
-                                <h:outputText value="5" styleClass="circle-number" style="background-color: #BAE1FF;"/>
-                                <h:outputText value="Denúncia" styleClass="h4" />
-                            </b:column>
-                        </b:row>
-                    </b:container>
 
-                    <!-- Título da Seção para Listagem de Denúncias -->
-                  
-                
-                </h:panelGroup>
+                                <!-- Círculo Reclamação -->
+                                <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
+                                    <h:outputText value="7" styleClass="circle-number" style="background-color: #FFDFBA;"/>
+                                    <h:outputText value="Reclamação" styleClass="h4" />
+                                </b:column>
 
-                <b:row styleClass="table-responsive" >
-                    <h:dataTable styleClass="table table-striped" value="#{denunciaController.listarDenunciasNovas()}" var="denuncia" rows="15">
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="ID" /></f:facet>
-                            <h:outputText value=" #{denuncia.id} " />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="Tipo" /></f:facet>
-                            <h:outputText value=" #{denuncia.tipoDenuncia} " />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="Assunto" /></f:facet>
-                            <h:outputText value=" #{denuncia.assundoDenuncia} " />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="Descrição" /></f:facet>
-                            <h:outputText value=" #{denuncia.descricaoDenuncia} " />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="Local" /></f:facet>
-                            <h:outputText value=" #{denuncia.localDenuncia} " />
-                        </h:column>
-                         <h:column>
-                            <f:facet name="header"><h:outputText value="Status" /></f:facet>
-                            <h:outputText value=" #{denuncia.estadoDenuncia} " />
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header"><h:outputText value="Data/Hora" /></f:facet>
-                            <h:outputText value=" #{denunciaController.formatarData(denuncia.dataDenuncia)} " />
-                        </h:column>
-                    </h:dataTable>
-                </b:row>
+                                <!-- Círculo Denuncia -->
+                                <b:column col-xs="6" col-sm="2" styleClass="placeholder" style="display: flex; flex-direction: column; align-items: center; margin: 0 5px;">
+                                    <h:outputText value="5" styleClass="circle-number" style="background-color: #FFB3BA;"/>
+                                    <h:outputText value="Denúncia" styleClass="h4" />
+                                </b:column>
+                            </b:row>
+                        </b:container>
+
+                        <!-- Título da Seção para Listagem de Denúncias -->
+
+
+                    </h:panelGroup>
+
+                    <b:row styleClass="table-responsive" >
+                        <h:dataTable styleClass="table table-striped" value="#{denunciaController.listarDenunciasNovas()}" var="denuncia" rows="15">
+                            <h:column>
+                                <f:facet name="header"><h:outputText value="ID" /></f:facet>
+                                <h:outputText value=" #{denuncia.id} " />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><h:outputText value="Tipo" /></f:facet>
+                                <h:outputText value=" #{denuncia.tipoDenuncia} " />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><h:outputText value="Assunto" /></f:facet>
+                                <h:outputText value=" #{denuncia.assundoDenuncia} " />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><h:outputText value="Descrição" /></f:facet>
+                                <h:outputText value=" #{denuncia.descricaoDenuncia} " />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><h:outputText value="Local" /></f:facet>
+                                <h:outputText value=" #{denuncia.localDenuncia} " />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><h:outputText value="Status" /></f:facet>
+                                <h:outputText value=" #{denuncia.estadoDenuncia} " />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header"><h:outputText value="Data/Hora" /></f:facet>
+                                <h:outputText value=" #{denunciaController.formatarData(denuncia.dataDenuncia)} " />
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header"><h:outputText value="Ação" /></f:facet>
+                                <b:button value="Em Andamento" styleClass="btn-primary" 
+                                          style="padding: 5px 10px; font-size: 10px;"/>
+                                <b:button value="Finalizado" styleClass="btn-success" 
+                                         style="padding: 5px 10px; font-size: 10px;" />
+                            </h:column>
+                        </h:dataTable>
+                    </b:row>
                 </b:panel>
             </b:panelGrid>
         </b:form>
