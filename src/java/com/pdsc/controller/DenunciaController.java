@@ -72,7 +72,9 @@ public class DenunciaController extends Controller {
     }
     
     public List<Denuncia> listarDenunciasNovas(){
-        return read("select d from Denuncia d where d.localdenuncia = 'N'", Denuncia.class);
+        //return read("select d from Denuncia d where d.localdenuncia = 'N'", Denuncia.class);
+       return read("select d from Denuncia d ", Denuncia.class);
+
     }
     
     public String formatarData(Date data){
